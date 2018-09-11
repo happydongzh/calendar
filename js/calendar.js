@@ -316,7 +316,7 @@ $(function($) {
             c = colorStep*(hl - idx)/2;
         }
         $(this).html((idx >= 10)?(idx+':00'):('0'+idx+':00')).css({
-            backgroundColor: 'rgba('+Math.round(c)+','+Math.round(c)+','+Math.round(c)+',1)',
+            'background-color': 'rgba('+Math.round(c)+','+Math.round(c)+','+Math.round(c)+',1)',
             color:'rgba('+(255-Math.round(c))+','+(255-Math.round(c))+','+(255-Math.round(c))+',1)'
         });//.append('<div class="close icon"></div>');
         $(this).on('click', function(){
