@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>CSS html</title>
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="topBtn today">
+        <button id="prev">◀︎</button>
+        <button id="today">Today</button>
+        <button id="next">▶︎</button>
+    </div>
+
+    <!-- <div class="topBtn switch">
+        <button>Day</button>
+        <button>Month</button>
+        <button>Year</button>
+	</div> -->
+    <div class="calendar">
+    </div>
+
+    <div id="dateDetail" class="dateDetail">
+        <div class="transitionLayerIn"></div>
+        <div class="transitionLayerIn"></div>
+        <div class="transitionLayerOut"></div>
+        <div class="transitionLayerOut"></div>
+        <div id="close">
+            <div class="close icon"></div>
+        </div>
+
+        <div class="hours">
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+            <div class="hour"></div>
+        </div>
+        <!-- <div id="clock"></div> -->
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/calendar.js"></script>
+
+</html>

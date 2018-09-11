@@ -1,0 +1,345 @@
+div{
+    font-family: sans-serif;
+}
+
+.yearTitle {
+    text-align: center;
+    max-width: 90em;
+    margin: 2em auto;
+    margin-bottom: 0;
+}
+
+.yearTitle .yearDiv {
+    height: 3em;
+    overflow: hidden;
+    width: 140px;
+    display: inline-block;
+    transition: 500ms all;
+    position: relative;
+}
+
+.abc {
+    height: 3em;
+    /* background-color: aqua; */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transition: all 350ms;
+}
+
+.abc>div {
+    display: inline-block;
+    min-width: 100px;
+    margin: 0 10px;
+    font-size: 2.5em;
+    /* transition: cubic-bezier(0.215, 0.610, 0.355, 1); */
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.abc>div:hover {
+    /* color: chocolate; */
+    text-shadow: -1px 4px 5px chocolate;
+}
+
+.yearTitle>span {
+    width: 20px;
+    height: 20px;
+    display: inline-table;
+    vertical-align: super;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.yearTitle>span:hover {
+    border-radius: 50%;
+    color: chocolate;
+}
+
+.calendar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    max-width: 90em;
+    position: relative;
+    overflow: hidden;
+    transform: scale(0.95) translateY(0.5em);
+}
+
+.calendar .month {
+    width: 20em;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.calendar .month>div:nth-child(1) {
+    color: chocolate;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.calendar .month>div:nth-child(1):hover {
+    font-weight: bold;
+}
+
+.calendar .month .days,
+.calendar .month .week {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.calendar .month .week {
+    height: 2.5em;
+}
+
+.calendar .month .days {
+    flex-wrap: wrap;
+    margin-top: 1px;
+}
+
+.calendar .month .week .weekday,
+.calendar .month .days .day {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 1px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.calendar .month .week .weekday {}
+
+.calendar .month .days .day {
+    border-radius: 50%;
+}
+
+.calendar .month .week .weekday {
+    background-color: #eee;
+}
+
+.calendar .month .days .theDate {
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-perspective-origin: center;
+    -moz-perspective-origin: center;
+    -ms-perspective-origin: center;
+    perspective-origin: center;
+}
+
+.calendar .month .days .theDate:hover {
+    background-color: #eee;
+}
+
+.calendar .month .days .theDate:hover>div {
+    -webkit-transform: translateZ(200px);
+    -ms-transform: translateZ(200px);
+    -o-transform: translateZ(200px);
+    transform: translateZ(200px);
+}
+
+.calendar .month .days .theDate>div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.calendar .theDate {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.highlight {
+    border-radius: 50%;
+    color: #ddd;
+    background-color: crimson;
+    transition: 0.3s all;
+    transform: scale(0.9)
+}
+
+.blur {
+    -webkit-filter: blur(5px);
+    -o-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.expand {
+    width: 90% !important;
+}
+
+.yearHighlight {
+    color: chocolate;
+}
+
+.btn-collapse {
+    transform: rotateY(180deg);
+}
+
+.topBtn {
+    width: auto;
+    position: fixed;
+    transition: all 200ms;
+    width: 100%;
+    position: absolute;
+    transition: all 200ms;
+    top: 5.5em;
+    text-align: center;
+}
+
+.today {
+}
+
+.switch {
+    left: 20%;
+}
+
+
+/*
+*below start detail panel
+*
+*/
+
+.dateDetail {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+.dateDetail > div.transitionLayerIn,
+.dateDetail > div.transitionLayerOut{
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    margin: 50% auto;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    /* transform: translateX(-50%) translateY(-50%); */
+}
+
+
+.detailOpen{
+    z-index: 999 !important;
+}
+
+
+.detailOpen #close{
+   opacity: 1 !important;
+}
+
+#close {
+    position: fixed;
+    left: 0.5em;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    transition: all 300ms 300ms;
+    top: 0.5em;
+    opacity: 0;
+}
+
+#close:hover {
+    background-color:rgba(210, 105, 30, .9);
+}
+
+#close:hover .icon {
+    color: #000;
+}
+
+.close.icon {
+    color: #000;
+    position: absolute;
+    margin-top: 1.3em;
+    margin-left: 1em;
+    width: 21px;
+    height: 21px;
+}
+
+.close.icon:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 2em;
+    height: 1px;
+    background-color: currentColor;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.close.icon:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 2em;
+    height: 1px;
+    background-color: currentColor;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.hours{
+    width: 0%;
+    height: 5em;
+    /* background-color: chocolate; */
+    display: flex;
+    left: 0;
+    position: fixed;
+    height: 80%;
+    top: 7.5em;
+    background-color:rgba(255, 255, 255, 0.5);
+}
+.hours .hour{
+    width: calc(100% / 12);
+    text-align: center;
+    line-height: 3em;
+    font-size: 1.5em;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 200ms;
+    align-self: auto;
+}
+
+.hour div.close.icon{
+    margin: 0;
+}
+.hour div.close.icon::before{
+    height: 3px;
+}
+
+.hour div.close.icon::after{
+    height: 3px;
+}
+.detailOpen div.hours{
+    opacity: 0.9;
+ }
+
+ .detailOpen div.hours div.hour:hover{
+    background-color:rgba(210, 105, 30, .9) !important;
+    color:black !important;
+    text-shadow: -1px 4px 5px chocolate;
+ }
+
+ div.tpart{
+     cursor: pointer;
+ }
+ div.tpart:hover{
+    font-weight: bold;
+ }
