@@ -316,8 +316,8 @@ $(function($) {
             c = colorStep*(hl - idx)/2;
         }
         $(this).html((idx >= 10)?(idx+':00'):('0'+idx+':00')).css({
-            backgroundColor: 'rgba('+c+','+c+','+c+',1)',
-            color:'rgba('+(255-c)+','+(255-c)+','+(255-c)+',1)'
+            backgroundColor: 'rgba('+Math.round(c)+','+Math.round(c)+','+Math.round(c)+',1)',
+            color:'rgba('+(255-Math.round(c))+','+(255-Math.round(c))+','+(255-Math.round(c))+',1)'
         });//.append('<div class="close icon"></div>');
         $(this).on('click', function(){
             alert('Add event not finished yet, coming soon.');
